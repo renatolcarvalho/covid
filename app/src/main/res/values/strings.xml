@@ -1,0 +1,10 @@
+<resources>
+	<string name="app_name">Covid</string>
+	<string name="country">País</string>
+	<string name="information">Informação</string>
+	<string name="retrieve">Buscar</string>
+	<string name="view_mode">Modo de visualização</string>
+	<string name="text">Texto</string>
+	<string name="graph">Gráfico</string>
+	<string name="status">Status</string>
+</resources>

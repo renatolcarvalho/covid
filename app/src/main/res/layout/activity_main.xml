@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
+
+	<TextView
+		android:id="@+id/countryTv"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/country"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<Spinner
+		android:id="@+id/countrySp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/countryTv" />
+
+	<TextView
+		android:id="@+id/infoTv"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/information"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/countrySp" />
+
+	<Spinner
+		android:id="@+id/infoSp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/infoTv"/>
+
+	<TextView
+		android:id="@+id/statusTv"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/status"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/infoSp" />
+
+	<Spinner
+		android:id="@+id/statusSp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/statusTv"/>
+
+	<TextView
+		android:id="@+id/viewModeTv"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/view_mode"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/statusSp"
+		android:visibility="gone"/>
+
+	<RadioGroup
+		android:id="@+id/viewModeRg"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/viewModeTv"
+		android:visibility="gone">
+		<RadioButton
+			android:id="@+id/viewModeTextRb"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/text" />
+		<RadioButton
+			android:id="@+id/viewModeGraphRb"
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:checked="true"
+			android:text="@string/graph" />
+	</RadioGroup>
+
+	<Button
+		android:id="@+id/retrieveBt"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/retrieve"
+		android:onClick="onRetrieveClick"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/viewModeRg" />
+
+	<com.jjoe64.graphview.GraphView
+		android:id="@+id/resultGv"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/retrieveBt"
+		app:layout_constraintBottom_toBottomOf="parent"
+		android:visibility="gone"/>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/retrieveBt"
+		app:layout_constraintBottom_toBottomOf="parent">
+		<TextView
+			android:id="@+id/resultTv"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+	</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
