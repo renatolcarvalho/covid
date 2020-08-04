@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+public class MainActivity : AppCompatActivity() {
 	private lateinit var viewModel: Covid19ViewModel
 	private lateinit var countryAdapter: ArrayAdapter<String>
 	private lateinit var countryNameSlugMap: MutableMap<String, String>
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 		statusAdapterInit()
 	}
 
-	fun onRetrieveClick() {
+	fun onRetrieveClick(view: View) {
 		when (infoSp.selectedItem.toString()) {
 			Information.DAY_ONE.type -> { fetchDayOne() }
 			Information.BY_COUNTRY.type -> { fetchByCountry() }
